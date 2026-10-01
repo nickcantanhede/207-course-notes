@@ -27,11 +27,9 @@ public class Robot {
    * @param name this Robot's name
    */
   public Robot(String name) {
-    // TODO: set this.name; set this.id to the current value of count (so the
-    //       first Robot gets id 0); then increase count by 1.
     this.id = count;
-    count += 1;
     this.name = name;
+    count++;
   }
 
   /**
@@ -49,7 +47,7 @@ public class Robot {
    * @return this Robot's id
    */
   public int getId() {
-    return this.id;
+    return id;
   }
 
   /**
@@ -58,6 +56,6 @@ public class Robot {
    * @return this Robot's name
    */
   public String getName() {
-    return this.name;
+    return name;
   }
 }

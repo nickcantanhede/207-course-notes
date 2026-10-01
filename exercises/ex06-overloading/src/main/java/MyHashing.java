@@ -19,7 +19,7 @@ public class MyHashing {
 
   /** Creates a MyHashing whose seed starts at 0. */
   public MyHashing() {
-    seed = 0;
+    this.seed = 0;
   }
 
   /**
@@ -38,9 +38,11 @@ public class MyHashing {
    * @return the seed value from before this call
    */
   public int hash(int value) {
-    int previous_seed = this.seed;
+
+    int previousSeed = seed;
     this.seed = value;
-    return previous_seed;
+
+    return previousSeed;
   }
 
   /**
@@ -52,9 +54,11 @@ public class MyHashing {
    * @return (previous seed + value) % MODULO
    */
   public int hash(char value) {
-      int return_value = (this.seed + value) % MODULO;
-      this.seed = value;
-      return return_value;
+
+    int result = (this.seed + value) % MODULO;
+    this.seed = value;
+    return result;
+
   }
 
   /**
@@ -66,12 +70,14 @@ public class MyHashing {
    * @return the sum of the characters' numeric codes
    */
   public static int hash(String value) {
-    // TODO: String.toCharArray() may help.
-      int sum_so_far = 0;
-      char[] char_array = value.toCharArray();
-      for (int i = 0; i < char_array.length; i++) {
-          sum_so_far += char_array[i];
-      }
-      return sum_so_far;
+
+    int sum = 0;
+
+    for (int i = 0; i < value.length(); i++) {
+        sum += value.charAt(i);
+    }
+
+    return sum;
+    
   }
 }
